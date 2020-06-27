@@ -1,5 +1,5 @@
 class Glass:
-    def __init__(self, cap = 4):
+    def __init__(self, cap=4):
         self.capacity = cap
         self._stack = []
 
@@ -20,7 +20,7 @@ class Glass:
     def size(self):
         return len(self._stack)
 
-    def _has_only_single_color_balls(self):
+    def has_only_single_color_balls(self):
         balls = self.get_all_balls()
         for i in range(1, len(balls)):
             if balls[i - 1] != balls[i]:
