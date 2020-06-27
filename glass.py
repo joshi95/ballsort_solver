@@ -1,24 +1,33 @@
+import copy
+
+
 class Glass:
-    def __init__(self, cap=4):
+    def __init__(self, cap):
         self.capacity = cap
-        self._stack = []
+        self.glasses_stack = list()
+
+    @staticmethod
+    def create_glass(balls, cap=4):
+        g = Glass(cap)
+        g.push_array_of_balls(balls)
+        return g
 
     def is_empty(self):
-        return len(self._stack) == 0
+        return len(self.glasses_stack) == 0
 
     def is_full(self):
-        return len(self._stack) == self.capacity
+        return len(self.glasses_stack) == self.capacity
 
-    def top(self):
-        return self._stack[-1]
+    def get_top(self):
+        return self.glasses_stack[-1]
 
-    def pop(self):
-        _x = self._stack[-1]
-        self._stack = self._stack[:-1]
+    def pop_ball(self):
+        _x = self.glasses_stack[-1]
+        self.glasses_stack = self.glasses_stack[:-1]
         return _x
 
-    def size(self):
-        return len(self._stack)
+    def get_size(self):
+        return len(self.glasses_stack)
 
     def has_only_single_color_balls(self):
         balls = self.get_all_balls()
@@ -28,27 +37,24 @@ class Glass:
         return True
 
     def push_array_of_balls(self, balls):
-        if len(balls) + len(self._stack) > self.capacity:
-            raise Exception("error: push_array_of_balls can't exceed glass capacity")
+        if len(balls) + len(self.glasses_stack) > self.capacity:
+            return False
         for ball in balls:
-            self.push(ball)
+            self.push_ball(ball)
 
     def get_all_balls(self):
         balls = list()
-        while len(balls) > 0:
-            balls.append(self.pop())
-        balls.reverse()
+        for i in range(0, len(self.glasses_stack)):
+            balls.append(self.glasses_stack[i])
         return balls
 
-    def push(self, ball):
+    def push_ball(self, ball):
         if self.is_full():
-            raise Exception("error: can't place the ball stack is full")
-        self._stack.append(ball)
+            return False
+        self.glasses_stack.append(ball)
 
     def clone(self):
-        glass = Glass(self.capacity)
-        glass.push_array_of_balls(self.get_all_balls())
-        return glass
+        return copy.deepcopy(self)
 
-    def __rep__(self):
-        return ",".join(self.get_all_balls())
+    def __repr__(self):
+        return ",".join([str(x) for x in self.get_all_balls()])
