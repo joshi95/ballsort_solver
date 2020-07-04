@@ -1,6 +1,6 @@
 import copy
 
-from move import Move
+from core.solver.move import Move
 
 
 class Board:

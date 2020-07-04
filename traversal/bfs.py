@@ -1,22 +1,27 @@
-class DFS:
+from traversal.traversal import Traversal
+
+
+class BFS(Traversal):
     def __init__(self, start_node):
         self.visited = set()
         self.visited.add(start_node.get_hash())
 
-        self.dfs_stack = []
-        self.dfs_stack.append(start_node)
+        self.bfs_queue = list()
+        self.bfs_queue.append(start_node)
 
     def is_done(self):
-        return len(self.dfs_stack) == 0
+        return len(self.bfs_queue) == 0
 
     def cur_node(self):
-        return self.dfs_stack[-1]
+        return self.bfs_queue[0]
 
     def iterate(self):
-        node = self.dfs_stack[-1]
-        self.dfs_stack = self.dfs_stack[:-1]
+        node = self.bfs_queue.pop(0)
+
         for neighbor in node.get_neighbors():
             neighborHash = neighbor.get_hash()
             if neighborHash not in self.visited:
-                self.dfs_stack.append(neighbor)
+                self.bfs_queue.append(neighbor)
+                print(neighborHash)
                 self.visited.add(neighborHash)
+

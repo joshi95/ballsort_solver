@@ -1,8 +1,8 @@
 import unittest
 
-from board import Board
-from glass import Glass
-from solver import solver
+from core.solver.board import Board
+from core.solver.glass import Glass
+from core.solver.solver import solver
 
 
 class TestMain(unittest.TestCase):

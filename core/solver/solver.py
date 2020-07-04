@@ -1,4 +1,5 @@
-from dfs import DFS
+from traversal.bfs import BFS
+from traversal.dfs import DFS
 
 
 class Node:
@@ -44,16 +45,17 @@ class GraphNode(Node):
 
 def solver(board):
     startNode = GraphNode(board, None, None)
-    dfs = DFS(startNode)
-    while not dfs.is_done():
-        current_node = dfs.cur_node()
+
+    traversal = BFS(startNode)
+    while not traversal.is_done():
+        current_node = traversal.cur_node()
         is_solved = current_node.get_board().is_complete()
         if is_solved:
             return {
                 "isSolvable": True,
                 "moves": current_node.get_moves_to_node()
             }
-        dfs.iterate()
+        traversal.iterate()
 
     return {
         "isSolvable": False,

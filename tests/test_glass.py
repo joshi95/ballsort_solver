@@ -1,6 +1,6 @@
 import unittest
 
-from glass import Glass
+from core.solver.glass import Glass
 
 
 class TestGlass(unittest.TestCase):
