@@ -12,16 +12,8 @@ In order to see how the project is run see the test_main inside the test directo
 
 ## Built With
 
-* [Python 3]
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* Python 3
 
 ## Authors
 
 * **Shubham Joshi** - *Initial work* - https://github.com/joshi95)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
