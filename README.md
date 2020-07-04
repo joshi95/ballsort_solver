@@ -1,5 +1,5 @@
 # BallSort-Solver
-A puzzle solver for the game Ball Sort
+A puzzle solver for the game BallSort
 
 ## Getting Started
 
