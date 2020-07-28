@@ -1,4 +1,4 @@
-# BallSort-Solver
+# Ballsort Solver
 A puzzle solver for the game BallSort
 
 ## Getting Started
