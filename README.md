@@ -1,10 +1,18 @@
 # Ballsort Solver
-A puzzle solver for the game BallSort
+A puzzle solver for the game [BallSort](https://play.google.com/store/apps/details?id=com.GMA.Ball.Sort.Puzzle&hl=en_IN)
 
 ## Getting Started
 
-This project is 100% return in python3 so all you need is to clone the repo and start playing it with the tests. 
-Currently test coverage is very poor will try to improve that.
+This project is written in python3 without any external dependencies so all you need to be up and running is to clone the repo and start playing with the tests.
+
+It can solves any given game state and give a possible moves solution for it.
+
+Both BFS and DFS stategy is getting used to generate the solution space. But BFS implementation requires optimization as it takes ages to solve for big puzzle levels. Will try to improve that if get time in future.
+
+Currently test coverage is very poor will try to improve.
+
+If anybody wants to contribute pr's are welcomed :).
+
 
 ### Prerequisites
 
