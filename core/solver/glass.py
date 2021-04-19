@@ -50,6 +50,7 @@ class Glass:
 
     def push_ball(self, ball):
         if self.is_full():
+            raise Exception
             return False
         self.glasses_stack.append(ball)
 
