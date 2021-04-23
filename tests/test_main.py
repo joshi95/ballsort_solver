@@ -20,12 +20,12 @@ class TestMain(unittest.TestCase):
             return False
 
     def test_can_create_multiple_glass(self):
-
         board = Board([
             Glass.create_glass([2, 1, 1, 1]),
             Glass.create_glass([2, 2, 2]),
             Glass.create_glass([1]),
-            Glass.create_glass([])])
+            Glass.create_glass([])
+        ])
         self.try_to_solve(board)
 
     def test_solve_complex_board(self):
@@ -40,7 +40,8 @@ class TestMain(unittest.TestCase):
             Glass.create_glass([4, 6, 8, 8]),
             Glass.create_glass([7, 2, 8, 1]),
             Glass.create_glass([]),
-            Glass.create_glass([]), ])
+            Glass.create_glass([]),
+        ])
         self.assertTrue(self.try_to_solve(board))
 
     def test_runs_correctly_for_wrong_board(self):
